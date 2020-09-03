@@ -16,7 +16,7 @@ int isOperator(String s)
         return 2;
     else if (strcmp("||", s) == 0)
         return 1;
-    else if (strcmp("=", s) == 0) // used as part of tokenizer
+    else if (strcmp("=", s) == 0 || strcmp("|", s) == 0 || strcmp("&", s) == 0) // used as part of tokenizer
         return -1;
     else
         return 0; // Not an Operator
