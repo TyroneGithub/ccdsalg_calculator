@@ -7,7 +7,6 @@
 int main()
 {
     /*
-    Queue *queue = NULL;
     char c; 
     queue = malloc(sizeof(Queue));
     create_queue(queue);
@@ -28,9 +27,13 @@ int main()
     printf("%d\n", queue_empty(queue));
 */
     Stack *stack = NULL;
+    Queue *queue = NULL;
 
     stack = malloc(sizeof(Stack));
+    queue = malloc(sizeof(Queue));
     create_stack(stack);
+    create_queue(queue);
+
     // push_stack(stack, 'A');
     // push_stack(stack, 'B');
     // push_stack(stack, 'C');
@@ -38,11 +41,10 @@ int main()
     // printf("%c", c);
     // printf("%c", top(stack));
     char input[256];
-    char output[256];
     fgets(input, 256, stdin);
 
-    infixToPostfix(stack, input, output);
-    printf("Answer: [%s] ", output);
+    infixToPostfix(stack, input, queue);
+    printf("Answer: [%s] ", queue->S);
 
     return 0;
 }

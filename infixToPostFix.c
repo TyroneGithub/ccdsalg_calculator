@@ -18,9 +18,8 @@ int isOperator(char c)
     }
 }
 
-void infixToPostfix(Stack *stack, char input[], char output[])
+void infixToPostfix(Stack *stack, char input[], Queue *queue)
 {
-    int char_count = 0;
     //SCAN
     int i;
     for (i = 0; i < strlen(input); i++)
@@ -33,16 +32,16 @@ void infixToPostfix(Stack *stack, char input[], char output[])
             if (i != 0)
             {
                 if (isdigit(input[i - 1]))
-                    output[char_count++] = input[i];
+                    enqueue(queue, input[i]);
                 else
                 {
-                    output[char_count++] = ' ';
-                    output[char_count++] = input[i];
+                    enqueue(queue, ' ');      //output[char_count++] = ' ';
+                    enqueue(queue, input[i]); //output[char_count++] = input[i];
                 }
             }
             else
             {
-                output[char_count++] = input[i];
+                enqueue(queue, input[i]); //output[char_count++] = input[i];
             }
         }
         else if (isOperator(input[i]))
@@ -56,8 +55,8 @@ void infixToPostfix(Stack *stack, char input[], char output[])
             {
                 while (isOperator(input[i]) <= isOperator(top(stack)) && !stack_empty(stack))
                 {
-                    output[char_count++] = ' ';
-                    output[char_count++] = pop_stack(stack);
+                    enqueue(queue, ' ');              //                    output[char_count++] = ' ';
+                    enqueue(queue, pop_stack(stack)); //output[char_count++] = pop_stack(stack);
                 }
 
                 push_stack(stack, input[i]);
@@ -71,7 +70,8 @@ void infixToPostfix(Stack *stack, char input[], char output[])
         {
             while (top(stack) != '(')
             {
-                output[char_count++] = pop_stack(stack);
+                enqueue(queue, ' ');
+                enqueue(queue, pop_stack(stack)); // output[char_count++] = pop_stack(stack);
             }
             pop_stack(stack);
         }
@@ -79,8 +79,8 @@ void infixToPostfix(Stack *stack, char input[], char output[])
 
     while (!stack_empty(stack))
     {
-        output[char_count++] = ' ';
-        output[char_count++] = pop_stack(stack);
+        enqueue(queue, ' ');              //output[char_count++] = ' ';
+        enqueue(queue, pop_stack(stack)); //output[char_count++] = pop_stack(stack);
     }
-    output[char_count] = '\0';
+    enqueue(queue, '\0'); //output[char_count] = '\0';
 }
