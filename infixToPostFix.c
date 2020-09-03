@@ -35,7 +35,8 @@ void infixToPostfix(Stack *stack, char input[], Queue *queue)
                     enqueue(queue, input[i]);
                 else
                 {
-                    enqueue(queue, ' ');      //output[char_count++] = ' ';
+                    if (!queue_empty(queue))
+                        enqueue(queue, ' ');  //output[char_count++] = ' ';
                     enqueue(queue, input[i]); //output[char_count++] = input[i];
                 }
             }
