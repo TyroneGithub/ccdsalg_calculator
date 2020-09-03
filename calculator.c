@@ -3,6 +3,7 @@
 #include "stacks.c"
 #include "queue.c"
 #include "infixToPostfix.c"
+#include "postfixEvaluation.c"
 
 int main()
 {
@@ -31,6 +32,12 @@ int main()
 
     stack = malloc(sizeof(Stack));
     create_stack(stack);
+
+    Queue *queue = NULL;
+    queue = malloc(sizeof(Queue));
+    create_queue(queue); 
+
+ 
     // push_stack(stack, 'A');
     // push_stack(stack, 'B');
     // push_stack(stack, 'C');
@@ -39,10 +46,14 @@ int main()
     // printf("%c", top(stack));
     char input[256];
     char output[256];
+    int i;
     fgets(input, 256, stdin);
 
     infixToPostfix(stack, input, output);
-    printf("Answer: [%s] ", output);
+    printf("Answer: [%s]\n", output);
+
+    i = postFixEvaluation(queue, output);
+
 
     return 0;
 }
