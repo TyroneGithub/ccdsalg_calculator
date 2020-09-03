@@ -1,6 +1,9 @@
-typedef struct{
+typedef char String[11];
+
+typedef struct
+{
     int head;
     int tail;
     int cap;
-    char *S;
-}Queue;
+    String *S;
+} Queue;

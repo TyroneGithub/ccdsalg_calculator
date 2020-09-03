@@ -1,23 +1,4 @@
-#include <string.h>
-#include <ctype.h>
-int isOperator(char c)
-{
-    switch (c)
-    {
-    case '^':
-        return 5;
-    case '*':
-    case '/':
-    case '%':
-        return 4;
-    case '+':
-    case '-':
-        return 3;
-    default:
-        return 0; // not an operator
-    }
-}
-
+/*
 void infixToPostfix(Stack *stack, char input[], Queue *queue)
 {
     //SCAN
@@ -85,3 +66,4 @@ void infixToPostfix(Stack *stack, char input[], Queue *queue)
     }
     enqueue(queue, '\0'); //output[char_count] = '\0';
 }
+*/

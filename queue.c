@@ -18,7 +18,7 @@ int queue_full(Queue *queue)
     return queue->head == (queue->tail + 1) % queue->cap;
 }
 
-void enqueue(Queue *queue, char item)
+void enqueue(Queue *queue, String item)
 {
     if (queue_full(queue))
     {
@@ -26,14 +26,14 @@ void enqueue(Queue *queue, char item)
     }
     else
     {
-        queue->S[queue->tail] = item;
+        strcpy(queue->S[queue->tail], item);
         if (queue->tail == queue->cap)
             queue->tail = 1;
         else
             queue->tail++;
     }
 }
-
+/*
 char dequeue(Queue *queue)
 {
     char c = '\0';
@@ -51,13 +51,15 @@ char dequeue(Queue *queue)
     }
     return c;
 }
-
-char queue_head(Queue *queue)
+*/
+/*
+String queue_head(Queue *queue)
 {
-    return queue->S[queue->head];
+    return *(queue->S[queue->head]);
 }
 
-char queue_tail(Queue *queue)
+String queue_tail(Queue *queue)
 {
-    return queue->S[queue->tail - 1];
+    return *(queue->S[queue->tail - 1]);
 }
+*/
