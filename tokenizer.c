@@ -49,36 +49,39 @@ int tokenizer(char input[], String tokenized[])
     for (i = 0; i < strlen(input); i++)
     {
         subcnt = 0;
-        convertCharToString(input[i], temp);
-
-        if (isdigit(input[i]))
+        if (input[i] != ' ')
         {
-            tokenized[cnt][subcnt++] = input[i];
+            convertCharToString(input[i], temp);
 
-            while (isdigit(input[i + 1]))
+            if (isdigit(input[i]))
             {
-                i++;
                 tokenized[cnt][subcnt++] = input[i];
-            }
-        }
-        else if (isOperator(temp))
-        {
-            tokenized[cnt][subcnt++] = input[i];
-            convertCharToString(input[i + 1], temp);
 
-            while (isOperator(temp))
+                while (isdigit(input[i + 1]))
+                {
+                    i++;
+                    tokenized[cnt][subcnt++] = input[i];
+                }
+            }
+            else if (isOperator(temp))
             {
-                i++;
                 tokenized[cnt][subcnt++] = input[i];
                 convertCharToString(input[i + 1], temp);
+
+                while (isOperator(temp))
+                {
+                    i++;
+                    tokenized[cnt][subcnt++] = input[i];
+                    convertCharToString(input[i + 1], temp);
+                }
             }
+            else
+            {
+                tokenized[cnt][subcnt++] = input[i]; // if '(' or ')'
+            }
+            tokenized[cnt][subcnt] = '\0';
+            cnt++;
         }
-        else
-        {
-            tokenized[cnt][subcnt++] = input[i]; // if '(' or ')'
-        }
-        tokenized[cnt][subcnt] = '\0';
-        cnt++;
     }
     return cnt - 1;
 }
