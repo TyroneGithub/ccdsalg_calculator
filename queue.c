@@ -3,7 +3,7 @@
 void create_queue(Queue *queue)
 {
     queue->cap = 256;
-    queue->S = malloc(sizeof(char) * queue->cap);
+    queue->S = malloc(sizeof(String) * queue->cap);
     queue->head = 0;
     queue->tail = 0;
 }
@@ -33,33 +33,33 @@ void enqueue(Queue *queue, String item)
             queue->tail++;
     }
 }
-/*
-char dequeue(Queue *queue)
+
+char *dequeue(Queue *queue)
 {
-    char c = '\0';
+    char *item = malloc(sizeof(String));
+
     if (queue_empty(queue))
     {
         printf("underflow error\n");
     }
     else
     {
-        c = queue->S[queue->head];
+        strcpy(item, queue->S[queue->head]);
         if (queue->head == queue->cap)
             queue->head = 1;
         else
             queue->head++;
     }
-    return c;
-}
-*/
-/*
-String queue_head(Queue *queue)
-{
-    return *(queue->S[queue->head]);
+    return item;
 }
 
-String queue_tail(Queue *queue)
+char *queue_head(Queue *queue)
 {
-    return *(queue->S[queue->tail - 1]);
+
+    return queue->S[queue->head];
 }
-*/
+
+char *queue_tail(Queue *queue)
+{
+    return (queue->S[queue->tail - 1]);
+}

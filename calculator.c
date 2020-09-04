@@ -1,3 +1,5 @@
+typedef char String[11];
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -37,12 +39,6 @@ int main()
     create_stack(stack);
     create_queue(queue);
 
-    // push_stack(stack, 'A');
-    // push_stack(stack, 'B');
-    // push_stack(stack, 'C');
-    // c = pop_stack(stack);
-    // printf("%c", c);
-    // printf("%c", top(stack));
     char input[256];
     String tokenized[256];
     // char output[256];
@@ -51,16 +47,22 @@ int main()
 
     int i;
 
+    printf("TOKENIZED VALUE OF INPUT: ");
     for (i = 0; i < tokenizer(input, tokenized); i++)
     {
         printf("[%s]", tokenized[i]);
     }
 
-    /*    infixToPostfix(stack, input, output);
-    printf("Answer: [%s]\n", output);
+    printf("\nINFIX TO POSTFIX: ");
 
-    i = postFixEvaluation(queue, output);
-*/
+    infixToPostfix(stack, queue, tokenized, tokenizer(input, tokenized));
+
+    for (i = 0; i < tokenizer(input, tokenized); i++)
+    {
+        printf("%s ", queue->S[i]);
+    }
+
+    //    i = postFixEvaluation(queue, output);
 
     return 0;
 }

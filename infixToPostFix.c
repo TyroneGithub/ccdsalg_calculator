@@ -1,58 +1,42 @@
-/*
-void infixToPostfix(Stack *stack, char input[], Queue *queue)
+
+void infixToPostfix(Stack *stack, Queue *queue, String tokenized[], int cnt)
 {
     //SCAN
     int i;
-    for (i = 0; i < strlen(input); i++)
+    for (i = 0; i < cnt; i++)
     {
         //   printf("%lld Evaluating index %d\n", strlen(input), i);
 
-        if (isdigit(input[i]))
+        if (atoi(tokenized[i]) || strcmp(tokenized[i], "0") == 0) // if it is a number
         {
-            //                printf("input %c is an operand \n", input[i]);
-            if (i != 0)
-            {
-                if (isdigit(input[i - 1]))
-                    enqueue(queue, input[i]);
-                else
-                {
-                    if (!queue_empty(queue))
-                        enqueue(queue, ' ');  //output[char_count++] = ' ';
-                    enqueue(queue, input[i]); //output[char_count++] = input[i];
-                }
-            }
-            else
-            {
-                enqueue(queue, input[i]); //output[char_count++] = input[i];
-            }
+            //  printf("input %s is an operand \n", tokenized[i]);
+            enqueue(queue, tokenized[i]); //output[char_count++] = input[i];
         }
-        else if (isOperator(input[i]))
+        else if (isOperator(tokenized[i]))
         {
             //              printf("input %c is an operator \n", input[i]);
             //printf(" % c % c ", input[i], top(stack));
 
-            if (stack_empty(stack) || top(stack) == '(' || (isOperator(input[i]) > isOperator(top(stack)) || isOperator(input[i]) == 5))
-                push_stack(stack, input[i]);
+            if (stack_empty(stack) || strcmp(top(stack), "(") == 0 || (isOperator(tokenized[i]) > isOperator(top(stack)) || isOperator(tokenized[i]) == 8))
+                push_stack(stack, tokenized[i]);
             else
             {
-                while (isOperator(input[i]) <= isOperator(top(stack)) && !stack_empty(stack))
+                while (isOperator(tokenized[i]) <= isOperator(top(stack)) && !stack_empty(stack))
                 {
-                    enqueue(queue, ' ');              //                    output[char_count++] = ' ';
                     enqueue(queue, pop_stack(stack)); //output[char_count++] = pop_stack(stack);
                 }
 
-                push_stack(stack, input[i]);
+                push_stack(stack, tokenized[i]);
             }
         }
-        else if (input[i] == '(')
+        else if (strcmp(tokenized[i], "(") == 0)
         {
-            push_stack(stack, input[i]);
+            push_stack(stack, tokenized[i]);
         }
-        else if (input[i] == ')')
+        else if (strcmp(tokenized[i], ")") == 0)
         {
-            while (top(stack) != '(')
+            while (strcmp(top(stack), "("))
             {
-                enqueue(queue, ' ');
                 enqueue(queue, pop_stack(stack)); // output[char_count++] = pop_stack(stack);
             }
             pop_stack(stack);
@@ -61,9 +45,6 @@ void infixToPostfix(Stack *stack, char input[], Queue *queue)
 
     while (!stack_empty(stack))
     {
-        enqueue(queue, ' ');              //output[char_count++] = ' ';
         enqueue(queue, pop_stack(stack)); //output[char_count++] = pop_stack(stack);
     }
-    enqueue(queue, '\0'); //output[char_count] = '\0';
 }
-*/

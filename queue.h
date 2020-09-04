@@ -1,4 +1,4 @@
-typedef char String[11];
+
 
 typedef struct
 {
