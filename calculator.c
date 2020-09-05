@@ -1,12 +1,18 @@
+typedef char String[11];
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
 #include "stacks.c"
 #include "queue.c"
+#include "tokenizer.c"
+#include "infixToPostfix.c"
+#include "evaluatePostFix.c"
 
-
-int main(){
-
-    Queue *queue = NULL;
+int main() {
+/*
     char c; 
     queue = malloc(sizeof(Queue));
     create_queue(queue);
@@ -25,19 +31,42 @@ int main(){
     printf("%d\n", queue_empty(queue));
     c = dequeue(queue);
     printf("%d\n", queue_empty(queue));
+*/
+    Stack *stack = NULL;
+    Queue *queue = NULL;
 
-    // Stack *stack = NULL;
-    // char c;
-    // stack = malloc(sizeof(Stack));
-    // create_stack(stack);
-    // push_stack(stack, 'A');
-    // push_stack(stack, 'B');
-    // push_stack(stack, 'C');
-    // c = pop_stack(stack);
-    // printf("%c", c);
-    // printf("%c", top(stack));
+    stack = malloc(sizeof(Stack));
+    queue = malloc(sizeof(Queue));
+    create_stack(stack);
+    create_queue(queue);
+
+    char input[256];
+    String tokenized[256];
+    // char output[256];
+
+    fgets(input, 256, stdin);
+
+    int i;
+
+    printf("TOKENIZED VALUE OF INPUT: ");
+    
+    for (i = 0; i < tokenizer(input, tokenized); i++) {
+        printf("[%s]", tokenized[i]);
+    }
+
+    printf("\nINFIX TO POSTFIX: ");
+
+    infixToPostfix(stack, queue, tokenized, tokenizer(input, tokenized));
+
+    for (i = 0; i < tokenizer(input, tokenized); i++) {
+        printf("%s ", queue->S[i]);
+    }
+    
+    printf("\nEVALUATE POSTFIX: ");
+    
+    evaluatePostfix(queue->S, tokenizer(input, tokenized));
+	
+    //    i = postFixEvaluation(queue, output);
+
     return 0;
 }
-
-
-
