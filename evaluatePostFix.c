@@ -14,14 +14,14 @@ int pop () {
 }
 
 
-void evaluatePostfix(String tokenized[], int length) {
+void evaluatePostfix(String queue[], int length) {
 	int ctr, op1, op2, result, final;
 	int currentDigit;
 	
 	stack = malloc(sizeof(int) * length);
 	
 	for (ctr = 0; ctr < length; ctr++) {
-		currentDigit = atoi(tokenized[ctr]);
+		currentDigit = atoi(queue[ctr]);
 		
 		if (currentDigit != 0) {
 			push(currentDigit);
@@ -30,35 +30,35 @@ void evaluatePostfix(String tokenized[], int length) {
 			op2 = pop();
 			op1 = pop();
 			
-			if (strcmp(tokenized[ctr], "+") == 0) {
+			if (strcmp(queue[ctr], "+") == 0) {
 				result = op1 + op2;
 				
-			} else if (strcmp(tokenized[ctr], "-") == 0) {
+			} else if (strcmp(queue[ctr], "-") == 0) {
 				result = op1 - op2;
 				
-			} else if (strcmp(tokenized[ctr], "*") == 0) {
+			} else if (strcmp(queue[ctr], "*") == 0) {
 				result = op1 * op2;
 				
-			} else if (strcmp(tokenized[ctr], "/") == 0) {
+			} else if (strcmp(queue[ctr], "/") == 0) {
 				if (op2 == 0) 
 					break;
 				
 				result = op1 / op2;
 			
-			} else if (strcmp(tokenized[ctr], "%") == 0) {
+			} else if (strcmp(queue[ctr], "%") == 0) {
 				result = op1 % op2;
 				
-			} else if (strcmp(tokenized[ctr], "^") == 0) {
+			} else if (strcmp(queue[ctr], "^") == 0) {
 				result = pow(op1, op2);
 				
-			} else if (strcmp(tokenized[ctr], "!") == 0) {
+			} else if (strcmp(queue[ctr], "!") == 0) {
 				if (op2 == 0) 
 					result = 1;
 				
 				else
 					result = 0;
 				
-			} else if (strcmp(tokenized[ctr], "&&") == 0) {
+			} else if (strcmp(queue[ctr], "&&") == 0) {
 				if (op1 != 0 && op2 != 0) 
 					result = 1;
 					
@@ -66,7 +66,7 @@ void evaluatePostfix(String tokenized[], int length) {
 					result = 0;
 				
 				
-			} else if (strcmp(tokenized[ctr], "||") == 0) {
+			} else if (strcmp(queue[ctr], "||") == 0) {
 				if (op1 != 0 || op2 != 0) 
 					result = 1;
 				
@@ -74,41 +74,41 @@ void evaluatePostfix(String tokenized[], int length) {
 					result = 0;
 				
 				
-			} else if (strcmp(tokenized[ctr], "==") == 0) {
+			} else if (strcmp(queue[ctr], "==") == 0) {
 				if (op1 == op2)
 					result = 1;
 				
 				else
 					result = 0;
 				
-			} else if (strcmp(tokenized[ctr], ">") == 0) {
+			} else if (strcmp(queue[ctr], ">") == 0) {
 				if (op1 > op2)
 					result = 1;
 				
 				else
 					result = 0;
 				
-			} else if (strcmp(tokenized[ctr], ">=") == 0) {
+			} else if (strcmp(queue[ctr], ">=") == 0) {
 				if (op1 >= op2)
 					result = 1;
 				else
 					result = 0;
 				
-			} else if (strcmp(tokenized[ctr], "<") == 0) {
+			} else if (strcmp(queue[ctr], "<") == 0) {
 				if (op1 < op2)
 					result = 1;
 				
 				else
 					result = 0;
 				
-			} else if (strcmp(tokenized[ctr], "<=") == 0) {
+			} else if (strcmp(queue[ctr], "<=") == 0) {
 				if (op1 <= op2)
 					result = 1;
 				
 				else
 					result = 0;
 				
-			} else if (strcmp(tokenized[ctr], "!=") == 0) {
+			} else if (strcmp(queue[ctr], "!=") == 0) {
 				if (op1 != op2)
 					result = 1;
 				
@@ -121,7 +121,7 @@ void evaluatePostfix(String tokenized[], int length) {
 		}
 	}
 	
-	if (op2 == 0 && strcmp(tokenized[ctr], "/") == 0) 
+	if (op2 == 0 && strcmp(queue[ctr], "/") == 0) 
 		printf("Division by zero error!");
 		
 	else {
