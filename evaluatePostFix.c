@@ -52,7 +52,7 @@ void evaluatePostfix(String tokenized[], int length) {
 				result = pow(op1, op2);
 				
 			} else if (strcmp(tokenized[ctr], "!") == 0) {
-				if (op1 == 0) 
+				if (op2 == 0) 
 					result = 1;
 				
 				else
