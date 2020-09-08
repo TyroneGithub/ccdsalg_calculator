@@ -20,7 +20,7 @@ int main() {
     enqueue(queue, 'S');
     printf("%d\n", queue_full(queue));
     enqueue(queue, 'A');
-    printf("%d\n", queue_full(queue));
+    printf("%d\n", queue_full(queue)); 
     enqueue(queue, 'Q');
     printf("%d\n", queue_full(queue));
     c = dequeue(queue);
