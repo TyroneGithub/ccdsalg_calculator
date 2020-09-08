@@ -125,7 +125,11 @@ void evaluatePostfix (String queue[], int length) {
 		}
 	}
 	
-	final = atoi(pop_stack(stack));
+	if (op2 == 0 && strcmp(queue[ctr], "/") == 0)
+		printf("Division by zero error!");
 	
-	printf("%d", final);
+	else {
+		final = atoi(pop_stack(stack));
+		printf("%d", final);
+	}
 }
