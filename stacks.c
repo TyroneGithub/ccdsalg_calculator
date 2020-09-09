@@ -40,7 +40,7 @@ char *pop_stack(Stack *stack)
     char *top1 = malloc(sizeof(String));
     if (stack_empty(stack))
     {
-        printf("Overflow Error!\n");
+        printf("Underflow Error!\n");
         return "";
     }
     else

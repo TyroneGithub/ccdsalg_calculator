@@ -33,13 +33,13 @@ int main()
 
         fgets(input, 258, stdin);
 
-        printf("TOKENIZED VALUE OF INPUT: ");
+        /* printf("TOKENIZED VALUE OF INPUT: ");
 
         for (i = 0; i < tokenizer(input, tokenized); i++)
         {
             printf("[%s]", tokenized[i]);
         }
-
+*/
         printf("\nINFIX TO POSTFIX: ");
 
         infixToPostfix(stack, queue, tokenized, tokenizer(input, tokenized));
@@ -51,7 +51,7 @@ int main()
 
         printf("\nEVALUATE POSTFIX: ");
 
-        evaluatePostfix(queue->S, tokenizer(input, tokenized));
+        evaluatePostfix(queue);
 
         while (!stack_empty(stack))
         {
@@ -62,12 +62,12 @@ int main()
             dequeue(queue);
         }
 
-        // stack = NULL;
-        // queue = NULL;
-        // stack = realloc(stack, sizeof(Stack));
-        // queue = realloc(queue, sizeof(Queue));
-        // create_stack(stack);
-        // create_queue(queue);
+        stack = NULL;
+        queue = NULL;
+        stack = realloc(stack, sizeof(Stack));
+        queue = realloc(queue, sizeof(Queue));
+        create_stack(stack);
+        create_queue(queue);
 
         x++;
     }
