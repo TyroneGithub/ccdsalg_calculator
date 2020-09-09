@@ -25,11 +25,10 @@ int main()
 
     char input[258];
     String tokenized[256];
-    char *c;
+    //char *c;
     int i;
 
-
-    while (x <= 50)
+    while (x < 50)
     {
 
         fgets(input, 258, stdin);
@@ -56,20 +55,19 @@ int main()
 
         while (!stack_empty(stack))
         {
-            c = pop_stack(stack);
+            pop_stack(stack);
         }
         while (!queue_empty(queue))
         {
-            c =dequeue(queue);
+            dequeue(queue);
         }
 
-        stack = NULL;
-        queue = NULL;
-        stack = realloc(stack, sizeof(Stack));
-        queue = realloc(queue, sizeof(Queue));
-        create_stack(stack);
-        create_queue(queue);
-
+        // stack = NULL;
+        // queue = NULL;
+        // stack = realloc(stack, sizeof(Stack));
+        // queue = realloc(queue, sizeof(Queue));
+        // create_stack(stack);
+        // create_queue(queue);
 
         x++;
     }
