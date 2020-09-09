@@ -13,30 +13,10 @@ typedef char String[11];
 
 int main()
 {
-    /*
-    char c; 
-    queue = malloc(sizeof(Queue));
-    create_queue(queue);
-    printf("%d\n", queue_empty(queue));
-    enqueue(queue, 'S');
-    printf("%d\n", queue_full(queue));
-    enqueue(queue, 'A');
-    printf("%d\n", queue_full(queue)); 
-    enqueue(queue, 'Q');
-    printf("%d\n", queue_full(queue));
-    c = dequeue(queue);
-    printf("%c\n", c);
-    printf("%c\n", queue_head(queue));
-    c = dequeue(queue);
-    printf("%c\n", queue_head(queue));
-    printf("%d\n", queue_empty(queue));
-    c = dequeue(queue);
-    printf("%d\n", queue_empty(queue));
-*/
+
     Stack *stack = NULL;
     Queue *queue = NULL;
     int x = 0;
-    int j;
     stack = malloc(sizeof(Stack));
     queue = malloc(sizeof(Queue));
     create_stack(stack);
@@ -45,13 +25,11 @@ int main()
     char input[258];
     String tokenized[256];
     char *c;
-    // char output[256];
 
     while (x <= 50)
     {
 
         fgets(input, 258, stdin);
-        // input[strlen(input) - 1] = '\0';
         int i;
 
         printf("TOKENIZED VALUE OF INPUT: ");
@@ -64,7 +42,6 @@ int main()
         printf("\nINFIX TO POSTFIX: ");
 
         infixToPostfix(stack, queue, tokenized, tokenizer(input, tokenized));
-        // printf("**********%s**********\n", tokenized);
 
         for (i = 0; i < tokenizer(input, tokenized); i++)
         {
@@ -83,7 +60,6 @@ int main()
         {
             c = dequeue(queue);
         }
-        printf("%s\n", stack->S[j]);
         stack = NULL;
         queue = NULL;
         stack = realloc(stack, sizeof(Stack));
@@ -91,11 +67,7 @@ int main()
         create_stack(stack);
         create_queue(queue);
         x++;
-        // if (scanf("%c", &c) == 'x')
-        //     x = 50;
     }
-
-    //    i = postFixEvaluation(queue, output);
 
     return 0;
 }
