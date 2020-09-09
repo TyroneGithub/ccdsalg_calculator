@@ -26,13 +26,13 @@ int main()
     char input[258];
     String tokenized[256];
     char *c;
+    int i;
 
 
     while (x <= 50)
     {
 
         fgets(input, 258, stdin);
-        int i;
 
         printf("TOKENIZED VALUE OF INPUT: ");
 
@@ -56,11 +56,11 @@ int main()
 
         while (!stack_empty(stack))
         {
-            pop_stack(stack);
+            c = pop_stack(stack);
         }
         while (!queue_empty(queue))
         {
-            dequeue(queue);
+            c =dequeue(queue);
         }
 
         stack = NULL;
