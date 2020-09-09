@@ -17,6 +17,7 @@ int main()
     Stack *stack = NULL;
     Queue *queue = NULL;
     int x = 0;
+
     stack = malloc(sizeof(Stack));
     queue = malloc(sizeof(Queue));
     create_stack(stack);
@@ -25,6 +26,7 @@ int main()
     char input[258];
     String tokenized[256];
     char *c;
+
 
     while (x <= 50)
     {
@@ -54,18 +56,21 @@ int main()
 
         while (!stack_empty(stack))
         {
-            c = pop_stack(stack);
+            pop_stack(stack);
         }
         while (!queue_empty(queue))
         {
-            c = dequeue(queue);
+            dequeue(queue);
         }
+
         stack = NULL;
         queue = NULL;
         stack = realloc(stack, sizeof(Stack));
         queue = realloc(queue, sizeof(Queue));
         create_stack(stack);
         create_queue(queue);
+
+
         x++;
     }
 
