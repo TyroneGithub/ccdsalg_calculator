@@ -34,7 +34,8 @@ void evaluatePostfix(Queue *queue)
 		else
 		{
 			op2 = atoi(pop_stack(stack));
-			op1 = atoi(pop_stack(stack));
+			if(strcmp(dequeued,"!")!=0)
+				op1 = atoi(pop_stack(stack));
 
 			if (strcmp(dequeued, "+") == 0)
 			{

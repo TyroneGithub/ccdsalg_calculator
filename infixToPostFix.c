@@ -12,7 +12,7 @@ void infixToPostfix(Stack *stack, Queue *queue, String tokenized[], int cnt)
             //  printf("input %s is an operand \n", tokenized[i]);
             enqueue(queue, tokenized[i]); //output[char_count++] = input[i];
         }
-        else if (isOperator(tokenized[i]))
+        else if (isOperator(tokenized[i]) || strcmp(tokenized[i], "!") == 0)
         {
             //              printf("input %c is an operator \n", input[i]);
             //printf(" % c % c ", input[i], top(stack));

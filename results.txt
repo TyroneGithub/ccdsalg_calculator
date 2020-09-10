@@ -1,153 +1,165 @@
-TOKENIZED VALUE OF INPUT: [1][-][5][*][2][+][3]
+
 INFIX TO POSTFIX: 1 5 2 * - 3 + 
 EVALUATE POSTFIX: -6
-TOKENIZED VALUE OF INPUT: [1][/][0][+][5][*][3]
+
 INFIX TO POSTFIX: 1 0 / 5 3 * + 
 EVALUATE POSTFIX: Division by zero error!
-TOKENIZED VALUE OF INPUT: [(][(][2][+][5][)][*][3][-][10][)][-][(][(][2][-][1][)][^][2][*][5][)]
+
 INFIX TO POSTFIX: 2 5 + 3 * 10 - 2 1 - 2 ^ 5 * -         
 EVALUATE POSTFIX: 6
-TOKENIZED VALUE OF INPUT: [5][-][2][-][3][-][1][+][5]
+
 INFIX TO POSTFIX: 5 2 - 3 - 1 - 5 + 
 EVALUATE POSTFIX: 4
-TOKENIZED VALUE OF INPUT: [5][^][2][^][3][^][4]
-INFIX TO POSTFIX: 5 2 3 4 ^ ^ ^ 
-EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [2][*][0][+][5][-][(][5][-][1][+][(][33][*][2][)][)]
+
+INFIX TO POSTFIX: 2 5 ^ 
+EVALUATE POSTFIX: 32
+
 INFIX TO POSTFIX: 2 0 * 5 + 5 1 - 33 2 * + -     
 EVALUATE POSTFIX: -65
-TOKENIZED VALUE OF INPUT: [2][<=][5][&&][3][>][1][+][5]
+
 INFIX TO POSTFIX: 2 5 <= 3 1 5 + > && 
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [(][1][>][5][&&][(][2][>][3][)][||][55][-][3][<=][(][2][&&][5][)][)]
-INFIX TO POSTFIX: 1 5 > 2 3 > && 55 3 - 2 5 && <= ||       
-EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [3][/][3][+][2][/][5][-][1][+][2][*][69][*][(][5][+][2][)]
+
+INFIX TO POSTFIX: 1 5 > 2 3 > && 55 3 - 2 5 && <= || !       
+EVALUATE POSTFIX: 1
+
 INFIX TO POSTFIX: 3 3 / 2 5 / + 1 - 2 69 * 5 2 + * +   
 EVALUATE POSTFIX: 966
-TOKENIZED VALUE OF INPUT: [69][+][69][-][69][*][69][/][69][^][69]
+
 INFIX TO POSTFIX: 69 69 + 69 69 * 69 69 ^ / - 
 EVALUATE POSTFIX: 138
-TOKENIZED VALUE OF INPUT: [1000][+][200][*][5000][+][132][+][45][+][(][9000][+][1234][-][(][6][*][7][)][+][899][+][(][56][)][)][*][(][(][2][<=][3][+][2][)][&&][(][5][/][2][+][(][3][*][9][)][)][)]
+
 INFIX TO POSTFIX: 1000 200 5000 * + 132 + 45 + 9000 1234 + 6 7 * - 899 + 56 + 2 3 2 + <= 5 2 / 3 9 * + && * +               
 EVALUATE POSTFIX: 1012324
-TOKENIZED VALUE OF INPUT: [(][(][2][/][3][+][5][)][<][69][)][&&][(][5][+][2][)][>=][(][2][^][10][)]
+
 INFIX TO POSTFIX: 2 3 / 5 + 69 < 5 2 + 2 10 ^ >= &&         
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [5][-][5]
+
 INFIX TO POSTFIX: 5 5 - 
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [5][*][5][*][5][==][5][^][3]
+
 INFIX TO POSTFIX: 5 5 * 5 * 5 3 ^ == 
 EVALUATE POSTFIX: 1
-TOKENIZED VALUE OF INPUT: [(][10][/][2][^][3][)][*][5][+][99][/][2]
+
 INFIX TO POSTFIX: 10 2 3 ^ / 5 * 99 2 / +   
 EVALUATE POSTFIX: 54
-TOKENIZED VALUE OF INPUT: [69][-][20]
+
 INFIX TO POSTFIX: 69 20 - 
 EVALUATE POSTFIX: 49
-TOKENIZED VALUE OF INPUT: [(][(][235][-][55][)][*][30][+][5][^][2][-][(][25][+][30][)][-][65][/][5][+][24][)][-][100][/][2][+][25][+][(][7][*][2][+][55][/][5][-][10][)][-][(][5][+][10][*][35][-][66][)]
+
 INFIX TO POSTFIX: 235 55 - 30 * 5 2 ^ + 25 30 + - 65 5 / - 24 + 100 2 / - 25 + 7 2 * 55 5 / + 10 - + 5 10 35 * + 66 - -           
 EVALUATE POSTFIX: 5082
-TOKENIZED VALUE OF INPUT: [420][+][69][*][420][/][420][+][69][+][(][69420][/][100][+][5][)]
+
 INFIX TO POSTFIX: 420 69 420 * 420 / + 69 + 69420 100 / 5 + +   
 EVALUATE POSTFIX: 1257
-TOKENIZED VALUE OF INPUT: [2][%][5][+][3][%][6][+][420][%][69][+][696969][/][69]
-INFIX TO POSTFIX: 2 5 3 6 + 420 69 + 696969 69 / +    
-EVALUATE POSTFIX: 10590
-TOKENIZED VALUE OF INPUT: [5][%][2][==][1][&&][6][%][3][==][0]
-INFIX TO POSTFIX: 5 2 1 == 6 3 0 == &&   
-EVALUATE POSTFIX: 1
-TOKENIZED VALUE OF INPUT: [9][%][0][+][25][*][100][/][50][+][(][1000][*][4][+][(][69][-][123][)][+][(][6][*][5][)][)]
-INFIX TO POSTFIX: 9 0 25 100 * 50 / + 1000 4 * 69 123 - + 6 5 * + +        
+
+INFIX TO POSTFIX: 2 5 % 3 6 % + 420 69 % + 696969 69 / + 
+EVALUATE POSTFIX: 10101
+
+INFIX TO POSTFIX: 5 2 % 1 == 6 3 % 0 == && 
+EVALUATE POSTFIX: 0
+
+INFIX TO POSTFIX: 9 0 % 25 100 * 50 / + 1000 4 * 69 123 - + 6 5 * + +       
 EVALUATE POSTFIX: 4026
-TOKENIZED VALUE OF INPUT: [9][%][1][+][25][*][100][/][50][+][(][1000][*][4][+][(][69][-][123][)][+][(][6][*][5][)][)]
-INFIX TO POSTFIX: 9 1 25 100 * 50 / + 1000 4 * 69 123 - + 6 5 * + +        
-EVALUATE POSTFIX: 4027
-TOKENIZED VALUE OF INPUT: [(][99][/][11][)][<=][55][&&][(][45][/][5][)][*][0]
+
+INFIX TO POSTFIX: 9 1 % 25 100 * 50 / + 1000 4 * 69 123 - + 6 5 * + +       
+EVALUATE POSTFIX: 4026
+
 INFIX TO POSTFIX: 99 11 / 55 <= 45 5 / 0 * &&     
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [(][99][/][11][)][<=][55][||][(][45][/][5][)][*][0]
+
 INFIX TO POSTFIX: 99 11 / 55 <= 45 5 / 0 * ||     
-EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [0][||][0][||][0][||][5][-][5][||][10][*][0][||][3][*][0][||][69][-][69][||][88][*][0][||][5][<][100]
+EVALUATE POSTFIX: 1
+
 INFIX TO POSTFIX: 0 0 || 0 || 5 5 - || 10 0 * || 3 0 * || 69 69 - || 88 0 * || 5 100 < || 
 EVALUATE POSTFIX: 1
-TOKENIZED VALUE OF INPUT: [5][&&][25][&&][3][<=][2][&&][5][^][2][&&][69][*][0]
+
 INFIX TO POSTFIX: 5 25 && 3 2 <= && 5 2 ^ && 69 0 * && 
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [5][-][2][*][10][+][5][-][8][^][2][+][10][-][88][-][55][+][24]
+
 INFIX TO POSTFIX: 5 2 10 * - 5 + 8 2 ^ - 10 + 88 - 55 - 24 + 
 EVALUATE POSTFIX: -183
-TOKENIZED VALUE OF INPUT: [99][-][99][&&][55][*][0][&&][15][>][5]
+
 INFIX TO POSTFIX: 99 99 - 55 0 * && 15 5 > && 
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [(][696969][+][420420][*][2][/][25][)][-][(][420420][-][6969][)][+][(][100][-][5][)][*][25][-][(][45050][*][6][)][+][(][6][%][2][+][5][^][2][)][-][52][^][5][+][(][1000][-][500][)][-][(][5000][*][10][)][+][123456]
-INFIX TO POSTFIX: 696969 420420 2 * 25 / + 420420 6969 - - 100 5 - 25 * + 45050 6 * - 6 2 5 2 ^ + + 52 5 ^ - 1000 500 - + 5000 10 * - 123456 +                
-EVALUATE POSTFIX: -380130043
-TOKENIZED VALUE OF INPUT: [2][^][3][^][5][^][6][+][24][-][900]
+
+INFIX TO POSTFIX: 696969 420420 2 * 25 / + 420420 6969 - - 100 5 - 25 * + 45050 6 * - 6 2 % 5 2 ^ + + 52 5 ^ - 1000 500 - + 5000 10 * - 123456 +               
+EVALUATE POSTFIX: -380031599
+
 INFIX TO POSTFIX: 2 3 5 6 ^ ^ ^ 24 + 900 - 
 EVALUATE POSTFIX: -876
-TOKENIZED VALUE OF INPUT: [1][-][9999][+][5][^][2][*][100]
+
 INFIX TO POSTFIX: 1 9999 - 5 2 ^ 100 * + 
 EVALUATE POSTFIX: -7498
-TOKENIZED VALUE OF INPUT: [(][1][+][5][*][(][2][+][3][-][(][25][-][10][+][(][45][*][5][/][(][2][+][5][)][)][)][)][)]
+
 INFIX TO POSTFIX: 1 5 2 3 + 25 10 - 45 5 * 2 5 + / + - * +           
 EVALUATE POSTFIX: -209
-TOKENIZED VALUE OF INPUT: [(][69][-][420][+][(][25][*][10][)][+][(][55][/][11][)][*][(][455][*][2][)][-][(][5][/][2][)][^][(][25][/][5][)][+][(][30][*][5][)][/][(][55][+][12][-][24][)][-][(][100][-][5][)][/][2][+][(][445][%][5][)][*][(][56][)][)]
-INFIX TO POSTFIX: 69 420 - 25 10 * + 55 11 / 455 2 * * + 5 2 / 25 5 / ^ - 30 5 * 55 12 + 24 - / + 100 5 - 2 / - 445 5 56 * +                        
-EVALUATE POSTFIX: 725
-TOKENIZED VALUE OF INPUT: [9][-][1000][+][(][9][<=][10][)][-][(][5][>=][6][)][+][(][10][==][5][*][2][)][-][55][/][2]
+
+INFIX TO POSTFIX: 69 420 - 25 10 * + 55 11 / 455 2 * * + 5 2 / 25 5 / ^ - 30 5 * 55 12 + 24 - / + 100 5 - 2 / - 445 5 % 56 * +                       
+EVALUATE POSTFIX: 249261
+
 INFIX TO POSTFIX: 9 1000 - 9 10 <= + 5 6 >= - 10 5 2 * == + 55 2 / -       
 EVALUATE POSTFIX: -1016
-TOKENIZED VALUE OF INPUT: [(][2][^][2][^][5][*][5][^][2][)][+][15][-][25][/][5][+][100]
+
 INFIX TO POSTFIX: 2 2 5 ^ ^ 5 2 ^ * 15 + 25 5 / - 100 +   
 EVALUATE POSTFIX: -515
-TOKENIZED VALUE OF INPUT: [5][/][5][+][3][/][0][/][0][*][10]
+
 INFIX TO POSTFIX: 5 5 / 3 0 / 0 / 10 * + 
 EVALUATE POSTFIX: Division by zero error!
-TOKENIZED VALUE OF INPUT: [100][/][25][+][1000][-][999][+][55][/][5][+][(][1000][-][24][+][(][506][^][2][)][-][(][666][)][^][1][-][5][^][2][)]
+
 INFIX TO POSTFIX: 100 25 / 1000 + 999 - 55 5 / + 1000 24 - 506 2 ^ + 666 1 ^ - 5 2 ^ - +       
 EVALUATE POSTFIX: 256337
-TOKENIZED VALUE OF INPUT: [(][99][/][3][)][+][2000][-][888][+][(][912][-][69][+][420][)][*][(][400][/][2][^][2][)][-][4500][+][(][66][-][123][)][*][(][69][-][420][)][+][99]
+
 INFIX TO POSTFIX: 99 3 / 2000 + 888 - 912 69 - 420 + 400 2 2 ^ / * + 4500 - 66 123 - 69 420 - * + 99 +           
 EVALUATE POSTFIX: 143051
-TOKENIZED VALUE OF INPUT: [1][^][2][^][3][^][4][^][5][^][6][^][7][^][8][^][9][^][10]
+
 INFIX TO POSTFIX: 1 2 3 4 5 6 7 8 9 10 ^ ^ ^ ^ ^ ^ ^ ^ ^ 
 EVALUATE POSTFIX: 1
-TOKENIZED VALUE OF INPUT: [7][/][6][/][3][/][2][/][1][/][2]
+
 INFIX TO POSTFIX: 7 6 / 3 / 2 / 1 / 2 / 
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [(][1][+][2][+][3][+][4][+][5][+][6][+][7][+][8][+][9][+][10][+][11][+][12][+][13][+][14][+][15][)][*][5][+][500][/][2][+][8][^][5][+][(][8][<=][10][)][&&][(][5][<=][10][)][+][900][*][50][+][30][^][5][*][250][/][2][/][5]
+
 INFIX TO POSTFIX: 1 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 5 * 500 2 / + 8 5 ^ + 8 10 <= + 5 10 <= 900 50 * + 30 5 ^ 250 * 2 / 5 / + &&       
 EVALUATE POSTFIX: 1
-TOKENIZED VALUE OF INPUT: [(][69][/][69][/][69][)][*][(][69][*][69][*][69][)]
+
 INFIX TO POSTFIX: 69 69 / 69 / 69 69 * 69 * *     
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [99][-][245][-][100][-][55][/][2][*-][50]
+
 INFIX TO POSTFIX: 99 245 - 100 - 55 2 50 / -  
 EVALUATE POSTFIX: 55
-TOKENIZED VALUE OF INPUT: [100][/][5][*][25][+][330][-][999][/][(][8][>][100][)]
+
 INFIX TO POSTFIX: 100 5 / 25 * 330 + 999 8 100 > / -   
 EVALUATE POSTFIX: Division by zero error!
-TOKENIZED VALUE OF INPUT: [696969][/][(][8][>][1][&&][5][<][10000][)][/][696969]
+
 INFIX TO POSTFIX: 696969 8 1 > 5 10000 < && / 696969 /   
 EVALUATE POSTFIX: 1
-TOKENIZED VALUE OF INPUT: [(][5][-][2][+][(][9][<=][10][)][&&][(][35][+][2][>=][9][)][-][9000][+][700][-][(][45][-][5][)][/][2][+][(][60][+][9][)][-][(][400][+][20][)][)][-][(][(][50][/][2][+][25][)][/][2][+][(][5][*][6][)][-][900][)]
+
 INFIX TO POSTFIX: 5 2 - 9 10 <= + 35 2 + 9 >= 9000 - 700 + 45 5 - 2 / - 60 9 + + 400 20 + - && 50 2 / 25 + 2 / 5 6 * + 900 - -                   
 EVALUATE POSTFIX: 846
-TOKENIZED VALUE OF INPUT: [0][-][0][-][0][-][0][-][0][-][0][-][0][-][0][/][10]
+
 INFIX TO POSTFIX: 0 0 - 0 - 0 - 0 - 0 - 0 - 0 10 / - 
 EVALUATE POSTFIX: 0
-TOKENIZED VALUE OF INPUT: [(][9][-][9][-][9][-][9][-][9][-][9][-][9][-][9][)][+][(][9][^][8][)]
+
 INFIX TO POSTFIX: 9 9 - 9 - 9 - 9 - 9 - 9 - 9 - 9 8 ^ +     
 EVALUATE POSTFIX: 43046667
-TOKENIZED VALUE OF INPUT: [(][6000000][-][5000000][+][9500][)][-][(][35][/][5][+][25][/][5][+][45][/][5][*][55][/][5][)][*][(][5][+][25][/][5][+][(][5][*][5][)][+][100][)]
+
 INFIX TO POSTFIX: 6000000 5000000 - 9500 + 35 5 / 25 5 / + 45 5 / 55 * 5 / + 5 25 5 / + 5 5 * + 100 + * -         
 EVALUATE POSTFIX: 994515
-TOKENIZED VALUE OF INPUT: [(][2][-][10][+][(][50][-][32][)][+][23][-][(][5][-][10][+][(][2][+][25][)][-][100][)][+][600]
-INFIX TO POSTFIX: 2 10 - 50 32 - + 23 + 5 10 - 2 25 + + 100 - - 600 + (       
+
+INFIX TO POSTFIX: 2 10 - 50 32 - + 23 + 5 10 - 2 25 + + 100 - - 600 +  ±       
 EVALUATE POSTFIX: 711
-TOKENIZED VALUE OF INPUT: [(][2][-][10][+][(][50][-][32][)][+][23][-][(][5][-][10][+][(][2][+][25][)][-][100][)][+][600]
-INFIX TO POSTFIX: 2 10 - 50 32 - + 23 + 5 10 - 2 25 + + 100 - - 600 + (       
-EVALUATE POSTFIX: 711
+
+INFIX TO POSTFIX: 5 2 <= 6 8 >= && !   
+EVALUATE POSTFIX: 1
+
+INFIX TO POSTFIX: 24 5 != !   
+EVALUATE POSTFIX: 0
+
+INFIX TO POSTFIX: 69 2 * 138 == ! !     
+EVALUATE POSTFIX: 1
+
+INFIX TO POSTFIX: 69 69 != !   
+EVALUATE POSTFIX: 1
+
+INFIX TO POSTFIX: 500 2 * 55 >= 25 5 > || !   
+EVALUATE POSTFIX: 0

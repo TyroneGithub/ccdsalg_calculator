@@ -3,7 +3,7 @@ int isOperator(String s) {
         return 8;
     else if (strcmp("!", s) == 0)
         return 7;
-    else if (strcmp("*", s) == 0 || strcmp("/", s) == 0 || strcmp("%%", s) == 0)
+    else if (strcmp("*", s) == 0 || strcmp("/", s) == 0 || strcmp("%", s) == 0)
         return 6;
     else if (strcmp("+", s) == 0 || strcmp("-", s) == 0)
         return 5;

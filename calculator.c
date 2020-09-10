@@ -28,7 +28,7 @@ int main()
     //char *c;
     int i;
 
-    while (x < 50)
+    while (x < 55)
     {
 
         fgets(input, 258, stdin);
