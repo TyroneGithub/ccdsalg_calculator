@@ -40,7 +40,7 @@ int main()
             printf("[%s]", tokenized[i]);
         }
 */
-        printf("\nINFIX TO POSTFIX: ");
+        printf("INFIX TO POSTFIX: ");
 
         infixToPostfix(stack, queue, tokenized, tokenizer(input, tokenized));
 
@@ -57,6 +57,8 @@ int main()
         {
             pop_stack(stack);
         }
+        printf("\n");
+
         while (!queue_empty(queue))
         {
             dequeue(queue);
